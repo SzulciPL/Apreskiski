@@ -1,0 +1,5 @@
+
+body, html { margin: 0; padding: 0; height: 100%; background: #000; font-family: Arial, sans-serif; }
+#map { height: 100vh; width: 100vw; }
+.leaflet-popup-content-wrapper { background: #111; color: #f5d07f; border: 1px solid #f5d07f; }
+.leaflet-popup-tip { background: #111; }

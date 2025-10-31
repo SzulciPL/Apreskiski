@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Après-Ski Map</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+<body>
+  <div id="map"></div>
+
+  <script>
+    const map = L.map('map').setView([47.2, 13.3], 7);
+
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+      maxZoom: 18,
+      attribution: '&copy; OpenStreetMap &copy; CARTO'
+    }).addTo(map);
+
+    const places = [
+      ["Kuhstall", 47.0126, 10.2910],
+      ["MooserWirt", 47.1299, 10.2581],
+      ["Trofana Alm", 47.0114, 10.2907],
+      ["Hinterhag Alm", 47.3914, 12.6371],
+      ["Goaßstall", 47.3786, 12.5949],
+      ["Postalm", 47.2833, 11.8735],
+      ["Lürzer Alm", 47.2520, 13.5659],
+      ["Fire & Ice", 46.9692, 11.0104],
+      ["Schladming Tenne", 47.3932, 13.6869],
+      ["Hofstadl Flachau", 47.3423, 13.3891]
+    ];
+
+    places.forEach(p => {
+      L.marker([p[1], p[2]]).addTo(map).bindPopup("<b>" + p[0] + "</b>");
+    });
+  </script>
+</body>
+</html>
